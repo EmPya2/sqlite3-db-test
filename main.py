@@ -43,6 +43,13 @@ class App(MDApp):
 			
 		except: 
 			toast("couldnt request permission")
+			
+		try:
+			self.conn = sqlite3.connect("mydb.db")
+			toast("db created")
+			
+		except Error as e: 
+			toast(f"create db failed: {e}")
 		
 
 	def create_db(self): 
